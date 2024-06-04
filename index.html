@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/main.css" />
+		<link rel="stylesheet" href="./css/dataset.css">
+		<link rel="stylesheet" href="./css/popup.css">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="main">
+			<div class="dataset">
+				<h1 class="dataset__title">Справочник контрагентов</h1>
+				<table class="dataset__table">
+				</table>
+			</div>
+			<nav class="nav">
+				<a class="nav__btn nav__btn-add" href="">Добавить</a>
+			</nav>
+		</div>
+
+		<div class="popup">
+			<div class="popup__add">
+				<p class="add__close">Закрыть</p>
+				<h2 class="add__title">Новый контрагент</h2>
+				<form class="add-form" action="#" method="GET">
+					<div class="accordion">
+						<div class="accordion__item">
+							<label class="accordion__item-trigger" for="general">Основные сведения</label>
+							<input id="general" class="accordion__item-trigger-input" type="checkbox">
+							<div class="accordion__item-content">
+								<label >Название
+									<input class="add-data" id="name" type="text">
+								</label>
+								<label >ИНН
+									<input class="add-data" id="inn" type="number" required>
+								</label>
+								<label >Адрес
+									<input class="add-data" id="adress" type="text">
+								</label>
+								<label >Телефон
+									<input class="add-data" id="phone" type="tel">
+								</label>
+								<label >Эл. почта
+									<input class="add-data" id="e_mail" type="email">
+								</label>
+								<label >Адрес сайта
+									<input class="add-data" id="site_link" type="text">
+								</label>
+								<label >Ф.И.О. руководителя
+									<input class="add-data" id="director_name" type="text">
+								</label>
+								<label >Тел. руководителя
+									<input class="add-data" id="director_phone" type="tel">
+								</label>
+							</div>
+						</div>
+
+						<div class="accordion__item">
+							<label class="accordion__item-trigger" for="contract">Договор и контакты</label>
+							<input id="contract" class="accordion__item-trigger-input" type="checkbox">
+							<div class="accordion__item-content">
+								<label >Тип контракта
+									<select class="add-data" id="contract_type" type="select">
+										<option value="Поставки">Поставки</option>
+										<option value="Купли-продажи">Купли-продажи</option>
+										<option value="Аренды">Аренды</option>
+										<option value="Займа">Займа</option>
+										<option value="Прочее">Прочее</option>
+									</select>
+								</label>
+								<label >Номер договора
+									<input class="add-data" id="contract_number" type="text">
+								</label>
+								<label >Дата договора
+									<input class="add-data" id="contract_data" type="date">
+								</label>
+								<label >Срок действия до
+									<input class="add-data" id="contract_end" type="date">
+								</label>
+								<label >Ф.И.О. куратора по дог.
+									<input class="add-data" id="resp_person" type="text">
+								</label>
+								<label >Телефон куратора
+									<input class="add-data" id="resp_phone" type="tel">
+								</label>
+								<label >Эл. почта куратора
+									<input class="add-data" id="resp_mail" type="email">
+								</label>
+							</div>
+						</div>
+
+						<div class="accordion__item">
+							<label class="accordion__item-trigger" for="bank">Банковские реквизиты</label>
+							<input id="bank" class="accordion__item-trigger-input" type="checkbox">
+							<div class="accordion__item-content">
+								<label >Название банка
+									<input class="add-data" id="bank_name" type="text">
+								</label>
+								<label >Расчётный счёт
+									<input class="add-data" id="bank_payment" type="number">
+								</label>
+								<label >БИК
+									<input class="add-data" id="bank_bic" type="number">
+								</label>
+								<label >Корр. счёт
+									<input class="add-data" id="bank_corr" type="number">
+								</label>
+							</div>
+						</div>
+
+						<div class="accordion__item">
+							<label class="accordion__item-trigger" for="comment">Комментарии</label>
+							<input id="comment" class="accordion__item-trigger-input" type="checkbox">
+							<div class="accordion__item-content">
+								<textarea class="add-data" name="" id="notes" cols="300" rows="10" wrap="hard"></textarea>
+							</div>
+						</div>
+					</div>
+					<input class="add__btn" type="submit">
+				</form>
+			</div>
+		</div>
+
+		<div class="popup-card">
+			<div class="card">
+				<p class="card__close">Закрыть</p>
+				<div class="dataset-card">
+					<!-- <h1 class="dataset__title">Справочник контрагентов</h1> -->
+					<table class="dataset__table-card">
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<script type="module" src="./js/main.js"></script>
+		<script type="module" src="./js/dataset_table_render.js"></script>
+		<script type="module" src="./js/get_post_function.js"></script>
+		<script src="https://unpkg.com/imask"></script>
+	</body>
+</html>
