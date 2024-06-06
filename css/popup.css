@@ -166,11 +166,20 @@ textarea:focus {
 .add__btn {
 	display: inline-block;
 	cursor: pointer;
-	box-shadow: -3px 3px 8px #1d1919c0;
+	box-shadow: 0 0 8px #a3a1a1c0;
+}
+
+.add__btn:hover {
+
+	box-shadow: 0 0 10px #1d1919c0;
 }
 
 .add__btn:focus {
 	box-shadow: none;
+}
+
+.add-data-disable {
+	display: none;
 }
 
 .accordion__item {
@@ -227,4 +236,11 @@ textarea:focus {
 
 .add-data {
 	width: 300px;
+}
+
+.add-data-hidden {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+
 }

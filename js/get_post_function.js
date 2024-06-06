@@ -1,4 +1,4 @@
-import { datasetRender, datasetRenderCard } from './dataset_table_render.js'
+import { datasetRender, datasetRenderCard, datasetRenderEditCard } from './dataset_table_render.js'
 
 const baseUrl =
 	'https://658de3287c48dce94739cf8b.mockapi.io/sergmih75/counterparty_directory'
@@ -30,10 +30,10 @@ export function postQuestions(newItem) {
 let datasetTable = document.querySelector('.dataset__table')
 
 datasetTable.addEventListener('click', function (e) {
-	if (e.target.tagName === 'BUTTON') {
+	if (e.target.tagName === 'BUTTON' && e.target.classList == 'del__btn') {
 		let url =
 			baseUrl + '/' + e.target.parentNode.parentNode.childNodes[1].innerHTML
-		console.log(e.target.tagName)
+		console.log(e.target.classList)
 		console.log(url)
 
 		fetch(url, {
@@ -64,6 +64,31 @@ datasetTable.addEventListener('click', function (e) {
 				.then(response => response.json())
 
 				.then(dataGetCard => datasetRenderCard(dataGetCard))
+
+				.catch(error => console.error(error))
+		}
+	}
+})
+
+// Редактирование данных контрагента (Заполнение имеющихся сведений в поля карточки ввода)
+datasetTable.addEventListener('click', function (e) {
+	if (e.target.tagName === 'BUTTON' && e.target.classList == 'edit__btn') {
+		let urlEditCard =
+			baseUrl + '/' + e.target.parentNode.parentNode.childNodes[1].innerHTML
+		console.log(e.target.classList)
+		console.log(urlEditCard)
+
+
+		getQuestionEditCard()
+
+		function getQuestionEditCard() {
+			fetch(urlEditCard, {
+				method: 'GET',
+				headers: { 'content-type': 'application/json' },
+			})
+				.then(response => response.json())
+
+				.then(dataGetEditCard => datasetRenderEditCard(dataGetEditCard))
 
 				.catch(error => console.error(error))
 		}

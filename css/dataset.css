@@ -69,7 +69,8 @@
     background-color: aqua;
 }
 
-.del__btn {
+.del__btn,
+.edit__btn {
     padding: 2px 4px;
     border: none;
     font-size: 12px;
@@ -80,6 +81,12 @@
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit__btn {
+    color: #fff;
+    background-color: #adacac;
 }
 
 .del__btn:hover {
@@ -87,4 +94,8 @@
     color: #fff;
     background-color: #f71707;
     box-shadow: 0 0 5px #f71707;
+}
+
+.edit__btn:hover {
+    background-color: #747272;
 }
